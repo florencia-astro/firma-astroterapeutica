@@ -4,104 +4,147 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Firmas Astroterapéutica</title>
+<title>Firma Astroterapéutica</title>
 <style>
-* { box-sizing:border-box; }
-
+* {
+  box-sizing: border-box;
+}
 body {
-  margin:0;
-  background:#f5f2f7;
-  color:#54205e;
-  font-family:Arial,Helvetica,sans-serif;
+  margin: 0;
+  background: #f5f2f7;
+  color: #54205e;
+  font-family: Arial,Helvetica,sans-serif;
 }
-
 header {
-  background:#54205e;
-  color:white;
-  text-align:center;
-  padding:24px 15px;
+  background: #54205e;
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px;
 }
-
-header h1 { font-size:24px; margin:0 0 6px; }
-header p { margin:0; font-size:14px; }
-
+header h1 {
+  font-size: 23px;
+  margin: 0 0 6px;
+}
+header p {
+  margin: 0;
+  font-size: 14px;
+}
 main {
-  max-width:1100px;
-  margin:25px auto;
-  padding:0 16px;
-  display:grid;
-  grid-template-columns:260px minmax(0,1fr);
-  gap:20px;
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 250px minmax(0,1fr);
+  gap: 18px;
 }
-
 .card {
-  min-width:0;
-  background:white;
-  border-radius:12px;
-  padding:22px;
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  min-width: 0;
 }
-
+h2 {
+  font-size: 18px;
+  margin: 0 0 18px;
+}
 label {
-  display:block;
-  font-weight:bold;
-  font-size:13px;
-  margin:17px 0 7px;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 16px 0 6px;
 }
-
 input {
-  width:100%;
-  padding:11px;
-  font-size:15px;
-  border:1px solid #d8cedd;
-  border-radius:6px;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #d8cedd;
+  border-radius: 6px;
+  font-size: 15px;
 }
-
 button {
-  border:0;
-  background:#54205e;
-  color:white;
-  padding:12px 15px;
-  border-radius:6px;
-  cursor:pointer;
-  margin:5px 5px 5px 0;
+  background: #54205e;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 15px;
+  cursor: pointer;
+  margin: 4px 5px 4px 0;
 }
-
 .secondary {
-  background:#eee7f1;
-  color:#54205e;
+  background: #eee7f1;
+  color: #54205e;
 }
-
-.note, #estado {
-  font-size:12px;
-  line-height:1.6;
-  color:#716678;
+.note,#status {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #716678;
 }
-
-.viewport {
-  overflow:auto;
-  padding:16px 0;
+.preview {
+  overflow-x: auto;
+  padding: 18px 0;
 }
-
-.viewport.phone {
-  max-width:360px;
-  border:1px dashed #cabbd0;
-  padding:12px 6px;
+.preview.phone {
+  width: 340px;
+  max-width: 100%;
+  border: 1px dashed #cabbd0;
+  padding: 10px 6px;
 }
-
-#signature {
-  width:100%;
-  max-width:790px;
+.preview.phone .astro-root {
+  max-width: 100%!important;
 }
-
+.preview.phone .astro-iso-cell {
+  display: none!important;
+}
+.preview.phone .astro-content {
+  padding: 8px 6px!important;
+}
+.preview.phone .astro-name {
+  font-size: 14px!important;
+}
+.preview.phone .astro-role {
+  font-size: 10px!important;
+  padding-bottom: 7px!important;
+}
+.preview.phone .astro-divider {
+  border-top: 0!important;
+  padding-top: 0!important;
+}
+.preview.phone .astro-social-cell {
+  display: block!important;
+  width: 100%!important;
+  padding: 7px 0 0!important;
+  text-align: left!important;
+}
+.preview.phone .astro-social-table {
+  float: none!important;
+  margin-left: 0!important;
+}
+.preview.phone .astro-brand {
+  display: block!important;
+  width: 100%!important;
+}
+.preview.phone .astro-logo {
+  width: 125px!important;
+}
+.preview.phone .astro-tagline {
+  font-size: 7px!important;
+  letter-spacing: 0!important;
+}
+.preview.phone .astro-social-icon {
+  width: 18px!important;
+  height: 18px!important;
+}
 @media(max-width:750px) {
-  main { display:block; }
-  .card { margin-bottom:18px; }
+  main {
+    display: block;
+  }
+  .card {
+    margin-bottom: 18px;
+  }
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <h1>Astroterapéutica</h1>
   <p>Generador de firmas institucionales</p>
@@ -118,8 +161,8 @@ button {
   <input id="role" value="Gerente de Operaciones">
 
   <p class="note">
-    Los logos y las redes son iguales
-    para todo el equipo.
+    Los logos, colores y enlaces se mantienen
+    iguales para todo el equipo.
   </p>
 </section>
 
@@ -129,12 +172,11 @@ button {
   <button class="secondary" id="desktop">
     Escritorio
   </button>
-
   <button class="secondary" id="mobile">
     Móvil
   </button>
 
-  <div class="viewport desktop" id="viewport">
+  <div class="preview" id="viewport">
     <div id="signature"></div>
   </div>
 
@@ -142,12 +184,11 @@ button {
     Copiar firma para Gmail
   </button>
 
-  <p id="estado" aria-live="polite"></p>
+  <p id="status" aria-live="polite"></p>
 
   <p class="note">
-    Gmail → Configuración →
+    Pegala en Gmail → Configuración →
     Ver todos los ajustes → Firma.
-    Pegá allí la firma copiada.
   </p>
 </section>
 </main>
@@ -180,13 +221,13 @@ const social = [
 ];
 
 function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, c => ({
+  return s.replace(/[&<>"']/g,c=>({
     '&':'&amp;',
     '<':'&lt;',
     '>':'&gt;',
     '"':'&quot;',
     "'":'&#39;'
-  })[c]);
+  }[c]));
 }
 
 function build() {
@@ -199,19 +240,20 @@ function build() {
   );
 
   const icons = social.map(([file,url,label]) => `
-    <td style="padding:0 8px 0 0">
+    <td style="padding:0 5px 0 0">
       <a href="${url.replace(/&/g,'&amp;')}"
          target="_blank">
         <img
+          class="astro-social-icon"
           src="${base+file}"
           alt="${label}"
-          width="24"
-          height="24"
+          width="18"
+          height="18"
           style="
             display:block;
+            width:18px;
+            height:18px;
             border:0;
-            width:24px;
-            height:24px;
           ">
       </a>
     </td>
@@ -220,63 +262,49 @@ function build() {
   return `
   <style>
   @media screen and (max-width:480px) {
-
     .astro-root {
       width:100%!important;
-      max-width:360px!important;
+      max-width:340px!important;
     }
-
     .astro-iso-cell {
-      width:none!important;
+      display:none!important;
       width:0!important;
       padding:0!important;
     }
-
-    .astro-iso {
-      width:84px!important;
-      height:auto!important;
-    }
-
     .astro-content {
-      padding:8px 10px!important;
+      padding:8px 6px!important;
     }
-
     .astro-name {
       font-size:14px!important;
-      line-height:1.15!important;
-      padding-bottom:3px!important;
+      line-height:1.2!important;
     }
-
     .astro-role {
       font-size:10px!important;
-      line-height:1.2!important;
       padding-bottom:7px!important;
     }
-
     .astro-divider {
       border-top:0!important;
       padding-top:0!important;
     }
-
+    .astro-brand {
+      display:block!important;
+      width:100%!important;
+    }
     .astro-logo {
-      width:155px!important;
+      width:125px!important;
       height:auto!important;
     }
-
     .astro-tagline {
       font-size:7px!important;
-      letter-spacing:1.2!important;
       letter-spacing:0!important;
       white-space:normal!important;
     }
-
     .astro-social-cell {
       display:block!important;
       width:100%!important;
-      padding:6px 0 0!important;
+      padding:7px 0 0!important;
       text-align:left!important;
     }
-
     .astro-social-table {
       float:none!important;
       margin-left:0!important;
@@ -290,185 +318,181 @@ function build() {
     cellpadding="0"
     cellspacing="0"
     border="0"
-    width="790"
+    width="480"
     style="
       border-collapse:collapse;
       width:100%;
-      max-width:790px;
+      max-width:480px;
       background:#ffffff;
       font-family:Arial,Helvetica,sans-serif;
     "
   >
-  <tr>
+    <tr>
 
-    <!-- ISOTIPO IZQUIERDO -->
-    <td
-      class="astro-iso-cell"
-      width="215"
-      valign="middle"
-      style="
-        width:27%;
-        padding:0 14px 0 0;
-        vertical-align:middle;
-      "
-    >
-      <img
-        class="astro-iso"
-        src="${base}FIRMA_ISO-ASTRO.svg"
-        alt="Isotipo Astroterapéutica"
-        width="215"
+      <!-- ISOTIPO -->
+      <td
+        class="astro-iso-cell"
+        width="115"
+        valign="middle"
         style="
-          display:block;
-          width:100%;
-          max-width:215px;
-          height:auto;
-          border:0;
+          width:115px;
+          padding:0 10px 0 0;
+          vertical-align:middle;
         "
       >
-    </td>
+        <img
+          src="${base}FIRMA_ISO-ASTRO.svg"
+          alt="Isotipo Astroterapéutica"
+          width="115"
+          style="
+            display:block;
+            width:115px;
+            height:auto;
+            border:0;
+          "
+        >
+      </td>
 
-    <!-- CONTENIDO DERECHO -->
-    <td
-      class="astro-content"
-      valign="middle"
-      style="
-        padding:14px 10px 14px 12px;
-        vertical-align:middle;
-      "
-    >
-
-      <table
-        role="presentation"
-        cellpadding="0"
-        cellspacing="0"
-        border="0"
-        width="100%"
+      <!-- CONTENIDO -->
+      <td
+        class="astro-content"
+        valign="middle"
         style="
-          border-collapse:collapse;
-          width:100%;
+          padding:9px 4px 9px 8px;
+          vertical-align:middle;
         "
       >
+        <table
+          role="presentation"
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+          width="100%"
+          style="
+            border-collapse:collapse;
+            width:100%;
+          "
+        >
 
-        <!-- NOMBRE -->
-        <tr>
-          <td
-            class="astro-name"
-            style="
-              color:#54205e;
-              font-size:27px;
-              line-height:1.18;
-              font-weight:bold;
-              padding:0 0 4px;
-            "
-          >
-            ${name}
-          </td>
-        </tr>
-
-        <!-- CARGO -->
-        <tr>
-          <td
-            class="astro-role"
-            style="
-              color:#54205e;
-              font-size:17px;
-              line-height:1.3;
-              padding:0 0 15px;
-            "
-          >
-            ${role}
-          </td>
-        </tr>
-
-        <!-- DIVISOR DORADO -->
-        <tr>
-          <td
-            class="astro-divider"
-            style="
-              border-top:2px solid #D6B56F;
-              padding-top:12px;
-            "
-          >
-
-            <table
-              role="presentation"
-              cellpadding="0"
-              cellspacing="0"
-              border="0"
-              width="100%"
+          <!-- NOMBRE -->
+          <tr>
+            <td
+              class="astro-name"
               style="
-                border-collapse:collapse;
-                width:100%;
+                color:#54205e;
+                font-size:17px;
+                line-height:1.2;
+                font-weight:bold;
+                padding:0 0 3px;
               "
             >
-              <tr>
+              ${name}
+            </td>
+          </tr>
 
-                <!-- LOGO Y BAJADA -->
-                <td
-                  valign="middle"
-                  style="vertical-align:middle"
-                >
-                  <img
-                    class="astro-logo"
-                    src="${base}FIRMA_LOGO-ASTRO.svg"
-                    alt="Astroterapéutica"
-                    width="132"
-                    style="
-                      display:block;
-                      width:132px;
-                      max-width:100%;
-                      height:auto;
-                      border:0;
-                    "
+          <!-- CARGO -->
+          <tr>
+            <td
+              class="astro-role"
+              style="
+                color:#54205e;
+                font-size:12px;
+                line-height:1.25;
+                padding:0 0 10px;
+              "
+            >
+              ${role}
+            </td>
+          </tr>
+
+          <!-- LÍNEA DORADA -->
+          <tr>
+            <td
+              class="astro-divider"
+              style="
+                border-top:1px solid #D6B56F;
+                padding-top:8px;
+              "
+            >
+              <table
+                role="presentation"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+                width="100%"
+                style="
+                  border-collapse:collapse;
+                  width:100%;
+                "
+              >
+                <tr>
+
+                  <!-- LOGO Y BAJADA -->
+                  <td
+                    class="astro-brand"
+                    valign="middle"
+                    style="vertical-align:middle"
                   >
+                    <img
+                      class="astro-logo"
+                      src="${base}FIRMA_LOGO-ASTRO.svg"
+                      alt="Astroterapéutica"
+                      width="125"
+                      style="
+                        display:block;
+                        width:125px;
+                        max-width:100%;
+                        height:auto;
+                        border:0;
+                      "
+                    >
 
-                  <div
-                    class="astro-tagline"
-                    style="
-                      color:#D6B56F;
-                      font-size:10px;
-                      font-weight:300;
-                      line-height:1.4;
-                      letter-spacing:.4px;
-                      padding-top:5px;
-                    "
-                  >
-                    ESCUELA LÍDER EN ASTROLOGÍA TERAPÉUTICA
-                  </div>
-                </td>
+                    <div
+                      class="astro-tagline"
+                      style="
+                        color:#D6B56F;
+                        font-size:7px;
+                        font-weight:600;
+                        line-height:1.3;
+                        letter-spacing:0;
+                        padding-top:4px;
+                      "
+                    >
+                      ESCUELA LÍDER EN ASTROLOGÍA TERAPÉUTICA
+                    </div>
+                  </td>
 
-                <!-- REDES SOCIALES -->
-                <td
-                  class="astro-social-cell"
-                  align="right"
-                  valign="middle"
-                  style="
-                    text-align:right;
-                    vertical-align:middle;
-                    padding-left:12px;
-                  "
-                >
-                  <table
-                    class="astro-social-table"
-                    role="presentation"
-                    cellpadding="0"
-                    cellspacing="0"
-                    border="0"
+                  <!-- REDES -->
+                  <td
+                    class="astro-social-cell"
+                    valign="middle"
                     align="right"
+                    style="
+                      text-align:right;
+                      vertical-align:middle;
+                      padding-left:8px;
+                    "
                   >
-                    <tr>${icons}</tr>
-                  </table>
-                </td>
+                    <table
+                      class="astro-social-table"
+                      role="presentation"
+                      cellpadding="0"
+                      cellspacing="0"
+                      border="0"
+                      align="right"
+                    >
+                      <tr>${icons}</tr>
+                    </table>
+                  </td>
 
-              </tr>
-            </table>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-          </td>
-        </tr>
-
-      </table>
-    </td>
-  </tr>
+        </table>
+      </td>
+    </tr>
   </table>`;
 }
 
@@ -478,39 +502,39 @@ function render() {
 }
 
 document.getElementById('name')
-  .addEventListener('input', render);
+  .addEventListener('input',render);
 
 document.getElementById('role')
-  .addEventListener('input', render);
+  .addEventListener('input',render);
 
 document.getElementById('desktop').onclick = () => {
   document.getElementById('viewport').className =
-    'viewport desktop';
+    'preview';
 };
 
 document.getElementById('mobile').onclick = () => {
   document.getElementById('viewport').className =
-    'viewport phone';
+    'preview phone';
 };
 
 document.getElementById('copy').onclick = async () => {
-  const status = document.getElementById('estado');
+  const status = document.getElementById('status');
 
   try {
     if (
       !navigator.clipboard?.write ||
       typeof ClipboardItem === 'undefined'
     ) {
-      throw new Error('Clipboard unavailable');
+      throw Error('No clipboard');
     }
 
     await navigator.clipboard.write([
       new ClipboardItem({
-        'text/html': new Blob(
+        'text/html':new Blob(
           [build()],
           {type:'text/html'}
         ),
-        'text/plain': new Blob(
+        'text/plain':new Blob(
           [
             document.getElementById('name').value +
             ' - ' +
@@ -524,15 +548,14 @@ document.getElementById('copy').onclick = async () => {
     status.textContent =
       'Firma copiada. Pegala en Gmail.';
 
-  } catch(error) {
+  } catch(e) {
     status.textContent =
-      'No se pudo copiar. Probá desde Chrome ' +
-      'con la página publicada en GitHub Pages.';
+      'No se pudo copiar automáticamente. ' +
+      'Probá con Chrome desde la página publicada.';
   }
 };
 
 render();
 </script>
-
 </body>
 </html>
