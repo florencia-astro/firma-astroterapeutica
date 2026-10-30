@@ -4,276 +4,487 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Firmas Astroterapéutica</title>
+<title>Generador de firmas | Astroterapéutica</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: #f4f0f6;
-  font-family: Arial, sans-serif;
-  color: #50245f;
-}
-header {
-  background: #50245f;
-  color: white;
-  padding: 24px;
-  text-align: center;
-}
-header h1 { margin: 0; font-size: 23px; }
-header p { font-size: 14px; }
-main {
-  max-width: 1050px;
-  margin: 30px auto;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: 270px minmax(0,1fr);
-  gap: 20px;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 22px;
-}
-label {
-  display: block;
-  margin: 16px 0 7px;
-  font-size: 13px;
-  font-weight: bold;
-}
-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #d5c8da;
-  border-radius: 6px;
-  font-size: 15px;
-}
-button {
-  background: #50245f;
-  color: white;
-  border: 0;
-  border-radius: 6px;
-  padding: 12px 16px;
-  cursor: pointer;
-  margin: 6px 5px 6px 0;
-}
-.preview {
-  padding: 18px 0;
-  overflow-x: auto;
-}
-.preview.mobile {
-  width: 350px;
-  max-width: 100%;
-  border: 1px dashed #c5b7cb;
-  padding: 8px;
-}
-#firma { max-width: 100%; }
-#estado { font-size: 13px; line-height: 1.5; }
-@media(max-width:750px) {
-  main { display: block; }
-  .card { margin-bottom: 20px; }
-}
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #f5f2f7;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #54205e;
+  }
+
+  header {
+    background: #54205e;
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 24px;
+  }
+
+  header p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  main {
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 0 18px;
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(50,20,60,.06);
+    min-width: 0;
+  }
+
+  h2 {
+    margin: 0 0 20px;
+    font-size: 18px;
+  }
+
+  label {
+    display: block;
+    margin: 18px 0 7px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8cedd;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  button {
+    border: none;
+    background: #54205e;
+    color: white;
+    border-radius: 6px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 5px 5px 5px 0;
+  }
+
+  button.secondary {
+    background: #eee7f1;
+    color: #54205e;
+  }
+
+  .preview {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+  }
+
+  .preview.mobile {
+    max-width: 375px;
+    border: 1px dashed #cabbd0;
+    padding: 12px;
+  }
+
+  #firma {
+    width: 100%;
+  }
+
+  #estado {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .nota {
+    color: #776b7b;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 750px) {
+    main {
+      display: block;
+    }
+
+    .card {
+      margin-bottom: 20px;
+    }
+  }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Astroterapéutica</h1>
-<p>Generador de firmas institucionales</p>
+  <h1>Astroterapéutica</h1>
+  <p>Generador de firmas institucionales</p>
 </header>
 
 <main>
+
 <section class="card">
-<h3>Personalizá tu firma</h3>
+  <h2>Personalizá tu firma</h2>
 
-<label for="nombre">Nombre y apellido</label>
-<input id="nombre" value="Ramiro Ovejero">
+  <label for="nombre">Nombre y apellido</label>
+  <input
+    id="nombre"
+    type="text"
+    value="Ramiro Ovejero"
+  >
 
-<label for="cargo">Cargo</label>
-<input id="cargo" value="Gerente de Operaciones">
+  <label for="cargo">Cargo</label>
+  <input
+    id="cargo"
+    type="text"
+    value="Gerente de Operaciones"
+  >
 
-<p style="font-size:13px;line-height:1.6">
-Los logos, colores y enlaces sociales
-se mantienen iguales para todo el equipo.
-</p>
+  <p class="nota">
+    Modificá tus datos. El diseño, el logo y
+    las redes sociales se mantienen iguales
+    para todo el equipo.
+  </p>
 </section>
 
 <section class="card">
-<h3>Vista previa</h3>
 
-<button onclick="vista(false)">Escritorio</button>
-<button onclick="vista(true)">Móvil</button>
+  <h2>Vista previa</h2>
 
-<div id="marco" class="preview">
-<div id="firma"></div>
-</div>
+  <button class="secondary" onclick="vista(false)">
+    Escritorio
+  </button>
 
-<button onclick="copiar()">Copiar firma para Gmail</button>
-<p id="estado"></p>
+  <button class="secondary" onclick="vista(true)">
+    Móvil
+  </button>
+
+  <div id="marco" class="preview">
+    <div id="firma"></div>
+  </div>
+
+  <button onclick="copiar()">
+    Copiar firma para Gmail
+  </button>
+
+  <p id="estado"></p>
+
+  <p class="nota">
+    Después de copiarla, abrí Gmail →
+    Configuración → Ver todos los ajustes →
+    Firma y pegala en el editor.
+  </p>
+
 </section>
 </main>
 
 <script>
 const base =
-"https://florencia-astro.github.io/firma-astroterapeutica/";
+  "https://florencia-astro.github.io/firma-astroterapeutica/";
+
+const violeta = "#54205e";
+const dorado = "#D6B56F";
 
 const redes = [
-  ["FIRMA_LINKEDIN-ASTRO.svg",
-   "https://www.linkedin.com/school/astroterapeutica/posts/"],
-  ["FIRMA_YOUTUBE-ASTRO.svg",
-   "https://www.youtube.com/@PabloFloresLaymuns"],
-  ["FIRMA_INSTAGRAM-ASTRO.svg",
-   "https://www.instagram.com/pablofloresastrologo/"],
-  ["FIRMA_SPOTIFY-ASTRO.svg",
-   "https://open.spotify.com/show/4sjnjM8VzF2f6bPzpRsdKz?si=7c757805113248ff"]
+  {
+    imagen: "FIRMA_LINKEDIN-ASTRO.svg",
+    url: "https://www.linkedin.com/school/astroterapeutica/posts/",
+    nombre: "LinkedIn"
+  },
+  {
+    imagen: "FIRMA_YOUTUBE-ASTRO.svg",
+    url: "https://www.youtube.com/@PabloFloresLaymuns",
+    nombre: "YouTube"
+  },
+  {
+    imagen: "FIRMA_INSTAGRAM-ASTRO.svg",
+    url: "https://www.instagram.com/pablofloresastrologo/",
+    nombre: "Instagram"
+  },
+  {
+    imagen: "FIRMA_SPOTIFY-ASTRO.svg",
+    url: "https://open.spotify.com/show/4sjnjM8VzF2f6bPzpRsdKz?si=7c757805113248ff",
+    nombre: "Spotify"
+  }
 ];
 
-function escapar(s) {
-  return s.replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",
-    '"':"&quot;","'":"&#39;"
-  })[c]);
+function escapar(texto) {
+  return texto.replace(/[&<>"']/g, caracter => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[caracter]);
 }
 
-function crearFirma() {
+function generarFirma() {
   const nombre = escapar(
-    document.getElementById("nombre").value
-  );
-  const cargo = escapar(
-    document.getElementById("cargo").value
+    document.getElementById("nombre").value.trim()
   );
 
-  const iconos = redes.map(([archivo,enlace]) => `
-    <td style="padding-right:9px">
-      <a href="${enlace.replace(/&/g,'&amp;')}"
+  const cargo = escapar(
+    document.getElementById("cargo").value.trim()
+  );
+
+  const iconos = redes.map(red => `
+    <td style="padding-left:8px" valign="middle">
+      <a href="${red.url.replace(/&/g, '&amp;')}"
          target="_blank">
-        <img src="${base+archivo}"
-             width="24" height="24"
-             style="display:block;border:0"
-             alt="Red social">
+        <img
+          src="${base + red.imagen}"
+          alt="${red.nombre}"
+          width="27"
+          height="27"
+          style="display:block;border:0;width:27px;height:27px">
       </a>
     </td>
   `).join("");
 
   return `
-  <table cellpadding="0" cellspacing="0" border="0"
+  <table
     role="presentation"
-    style="width:100%;max-width:600px;
-    font-family:Arial,sans-serif;
-    background:#ffffff;border-collapse:collapse">
-
+    cellpadding="0"
+    cellspacing="0"
+    border="0"
+    style="
+      width:100%;
+      max-width:790px;
+      border-collapse:collapse;
+      background:#ffffff;
+      font-family:Arial,Helvetica,sans-serif;
+    "
+  >
     <tr>
-      <td width="155" valign="middle"
-        style="background:#50245f;
-        border-radius:0 80px 80px 0;
-        text-align:center;padding:20px 12px">
+
+      <!-- ISOTIPO IZQUIERDO -->
+      <td
+        width="215"
+        valign="middle"
+        style="
+          width:27%;
+          padding:0;
+          vertical-align:middle;
+        "
+      >
         <img
           src="${base}FIRMA_ISO-ASTRO.svg"
-          width="115"
           alt="Astroterapéutica"
-          style="display:block;width:115px;
-          max-width:100%;height:auto;border:0">
+          width="215"
+          style="
+            display:block;
+            width:100%;
+            max-width:215px;
+            height:auto;
+            border:0;
+          "
+        >
       </td>
 
-      <td valign="middle"
-        style="padding:14px 12px 14px 22px">
+      <!-- CONTENIDO DERECHO -->
+      <td
+        valign="middle"
+        style="
+          padding:18px 16px 18px 25px;
+          vertical-align:middle;
+        "
+      >
 
-        <table cellpadding="0" cellspacing="0"
-          border="0" role="presentation"
-          style="width:100%;border-collapse:collapse">
+        <table
+          role="presentation"
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+          style="width:100%;border-collapse:collapse"
+        >
 
+          <!-- NOMBRE -->
           <tr>
-            <td style="font-size:25px;
-              font-weight:bold;color:#50245f;
-              line-height:1.15">
+            <td
+              style="
+                color:${violeta};
+                font-size:27px;
+                line-height:1.15;
+                font-weight:700;
+                padding:0 0 4px;
+              "
+            >
               ${nombre}
             </td>
           </tr>
 
+          <!-- CARGO -->
           <tr>
-            <td style="font-size:15px;
-              color:#50245f;
-              padding:5px 0 14px">
+            <td
+              style="
+                color:${violeta};
+                font-size:17px;
+                line-height:1.3;
+                padding:0 0 17px;
+              "
+            >
               ${cargo}
             </td>
           </tr>
 
+          <!-- LÍNEA DORADA -->
           <tr>
-            <td style="border-top:2px solid #c6ac79;
-              padding-top:12px">
+            <td
+              style="
+                border-top:2px solid ${dorado};
+                padding-top:13px;
+              "
+            >
 
-              <table cellpadding="0" cellspacing="0"
-                border="0" role="presentation"
-                style="width:100%">
+              <!-- LOGO + REDES -->
+              <table
+                role="presentation"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+                style="
+                  width:100%;
+                  border-collapse:collapse;
+                "
+              >
                 <tr>
-                  <td valign="middle">
+
+                  <!-- LOGO Y BAJADA -->
+                  <td
+                    valign="middle"
+                    style="
+                      vertical-align:middle;
+                      padding:0;
+                    "
+                  >
+
                     <img
                       src="${base}FIRMA_LOGO-ASTRO.svg"
-                      width="190"
                       alt="Astroterapéutica"
-                      style="display:block;
-                      width:190px;max-width:100%;
-                      height:auto;border:0">
+                      width="285"
+                      style="
+                        display:block;
+                        width:100%;
+                        max-width:285px;
+                        height:auto;
+                        border:0;
+                      "
+                    >
+
+                    <div
+                      style="
+                        color:${dorado};
+                        font-family:Arial,Helvetica,sans-serif;
+                        font-size:10px;
+                        font-weight:600;
+                        line-height:1.4;
+                        letter-spacing:.7px;
+                        white-space:nowrap;
+                        padding-top:6px;
+                      "
+                    >
+                      ESCUELA LÍDER EN ASTROLOGÍA TERAPÉUTICA
+                    </div>
+
                   </td>
-                </tr>
-                <tr>
-                  <td style="padding-top:12px">
-                    <table cellpadding="0"
-                      cellspacing="0" border="0"
-                      role="presentation">
-                      <tr>${iconos}</tr>
+
+                  <!-- ÍCONOS SOCIALES -->
+                  <td
+                    valign="middle"
+                    align="right"
+                    style="
+                      vertical-align:middle;
+                      text-align:right;
+                      padding-left:12px;
+                      white-space:nowrap;
+                    "
+                  >
+                    <table
+                      role="presentation"
+                      cellpadding="0"
+                      cellspacing="0"
+                      border="0"
+                      align="right"
+                    >
+                      <tr>
+                        ${iconos}
+                      </tr>
                     </table>
                   </td>
+
                 </tr>
               </table>
 
             </td>
           </tr>
+
         </table>
       </td>
     </tr>
-  </table>`;
+  </table>
+  `;
 }
 
 function actualizar() {
   document.getElementById("firma").innerHTML =
-    crearFirma();
+    generarFirma();
 }
 
 function vista(movil) {
   document.getElementById("marco")
-    .classList.toggle("mobile",movil);
+    .classList.toggle("mobile", movil);
 }
 
 async function copiar() {
-  const html = crearFirma();
+  const html = generarFirma();
   const estado = document.getElementById("estado");
 
   try {
     await navigator.clipboard.write([
       new ClipboardItem({
         "text/html": new Blob(
-          [html],{type:"text/html"}
+          [html],
+          { type: "text/html" }
         ),
         "text/plain": new Blob(
-          [document.getElementById("nombre").value],
-          {type:"text/plain"}
+          [
+            document.getElementById("nombre").value +
+            " - " +
+            document.getElementById("cargo").value
+          ],
+          { type: "text/plain" }
         )
       })
     ]);
+
     estado.textContent =
-      "Firma copiada. Pegala en la configuración de Gmail.";
-  } catch(e) {
+      "¡Firma copiada! Ya podés pegarla en Gmail.";
+
+  } catch (error) {
     estado.textContent =
-      "No se pudo copiar. Usá Chrome desde GitHub Pages.";
+      "No se pudo copiar automáticamente. " +
+      "Probá desde Google Chrome.";
   }
 }
 
 document.getElementById("nombre")
-  .addEventListener("input",actualizar);
+  .addEventListener("input", actualizar);
+
 document.getElementById("cargo")
-  .addEventListener("input",actualizar);
+  .addEventListener("input", actualizar);
 
 actualizar();
 </script>
+
 </body>
 </html>
