@@ -5,30 +5,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Firma Astroterapéutica</title>
+
 <style>
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   background: #f5f2f7;
   color: #54205e;
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 header {
   background: #54205e;
   color: #fff;
   text-align: center;
   padding: 24px 16px;
 }
+
 header h1 {
   font-size: 23px;
   margin: 0 0 6px;
 }
+
 header p {
   margin: 0;
   font-size: 14px;
 }
+
 main {
   max-width: 960px;
   margin: 24px auto;
@@ -37,22 +43,26 @@ main {
   grid-template-columns: 250px minmax(0,1fr);
   gap: 18px;
 }
+
 .card {
   background: white;
   border-radius: 12px;
   padding: 22px;
   min-width: 0;
 }
+
 h2 {
   font-size: 18px;
   margin: 0 0 18px;
 }
+
 label {
   display: block;
   font-size: 13px;
   font-weight: bold;
   margin: 16px 0 6px;
 }
+
 input {
   width: 100%;
   padding: 11px;
@@ -60,6 +70,7 @@ input {
   border-radius: 6px;
   font-size: 15px;
 }
+
 button {
   background: #54205e;
   color: white;
@@ -69,74 +80,102 @@ button {
   cursor: pointer;
   margin: 4px 5px 4px 0;
 }
+
 .secondary {
   background: #eee7f1;
   color: #54205e;
 }
-.note,#status {
+
+.note {
   font-size: 12px;
   line-height: 1.6;
   color: #716678;
 }
+
+.important-note {
+  margin-top: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #54205e;
+}
+
+#status {
+  min-height: 18px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #54205e;
+}
+
 .preview {
   overflow-x: auto;
   padding: 18px 0;
 }
+
 .preview.phone {
   width: 340px;
   max-width: 100%;
   border: 1px dashed #cabbd0;
   padding: 10px 6px;
 }
+
 .preview.phone .astro-root {
   max-width: 100%!important;
 }
+
 .preview.phone .astro-iso-cell {
   display: none!important;
 }
+
 .preview.phone .astro-content {
   padding: 8px 6px!important;
 }
+
 .preview.phone .astro-name {
   font-size: 14px!important;
 }
+
 .preview.phone .astro-role {
   font-size: 10px!important;
   padding-bottom: 7px!important;
 }
+
 .preview.phone .astro-divider {
   border-top: 0!important;
   padding-top: 0!important;
 }
+
 .preview.phone .astro-social-cell {
   display: block!important;
   width: 100%!important;
   padding: 7px 0 0!important;
   text-align: left!important;
 }
+
 .preview.phone .astro-social-table {
   float: none!important;
   margin-left: 0!important;
 }
+
 .preview.phone .astro-brand {
   display: block!important;
   width: 100%!important;
 }
+
 .preview.phone .astro-logo {
   width: 125px!important;
 }
+
 .preview.phone .astro-tagline {
   font-size: 7px!important;
   letter-spacing: 0!important;
 }
-.preview.phone .astro-social-icon {
-  width: 18px!important;
-  height: 18px!important;
-}
-@media(max-width:750px) {
+
+@media (max-width:750px) {
   main {
     display: block;
   }
+
   .card {
     margin-bottom: 18px;
   }
@@ -145,12 +184,14 @@ button {
 </head>
 
 <body>
+
 <header>
   <h1>Astroterapéutica</h1>
   <p>Generador de firmas institucionales</p>
 </header>
 
 <main>
+
 <section class="card">
   <h2>Personalizá tu firma</h2>
 
@@ -172,6 +213,7 @@ button {
   <button class="secondary" id="desktop">
     Escritorio
   </button>
+
   <button class="secondary" id="mobile">
     Móvil
   </button>
@@ -190,47 +232,59 @@ button {
     Pegala en Gmail → Configuración →
     Ver todos los ajustes → Firma.
   </p>
+
+  <p class="important-note">
+    <strong>Importante:</strong>
+    asegurate de seleccionar la vista
+    <strong>Escritorio</strong>
+    antes de copiar la firma.
+  </p>
 </section>
+
 </main>
 
 <script>
+
 const base =
   'https://florencia-astro.github.io/firma-astroterapeutica/';
 
 const social = [
   [
-    'FIRMA_LINKEDIN-ASTRO.svg',
+    'FIRMA_LINKEDIN-ASTRO.png',
     'https://www.linkedin.com/school/astroterapeutica/posts/',
     'LinkedIn'
   ],
   [
-    'FIRMA_YOUTUBE-ASTRO.svg',
+    'FIRMA_YOUTUBE-ASTRO.png',
     'https://www.youtube.com/@PabloFloresLaymuns',
     'YouTube'
   ],
   [
-    'FIRMA_INSTAGRAM-ASTRO.svg',
+    'FIRMA_INSTAGRAM-ASTRO.png',
     'https://www.instagram.com/pablofloresastrologo/',
     'Instagram'
   ],
   [
-    'FIRMA_SPOTIFY-ASTRO.svg',
+    'FIRMA_SPOTIFY-ASTRO.png',
     'https://open.spotify.com/show/4sjnjM8VzF2f6bPzpRsdKz?si=7c757805113248ff',
     'Spotify'
   ]
 ];
 
+let copiasRealizadas = 0;
+
 function escapeHtml(s) {
-  return s.replace(/[&<>"']/g,c=>({
-    '&':'&amp;',
-    '<':'&lt;',
-    '>':'&gt;',
-    '"':'&quot;',
-    "'":'&#39;'
+  return s.replace(/[&<>"']/g, c => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
   }[c]));
 }
 
 function build() {
+
   const name = escapeHtml(
     document.getElementById('name').value.trim()
   );
@@ -241,8 +295,10 @@ function build() {
 
   const icons = social.map(([file,url,label]) => `
     <td style="padding:0 5px 0 0">
-      <a href="${url.replace(/&/g,'&amp;')}"
-         target="_blank">
+      <a
+        href="${url.replace(/&/g,'&amp;')}"
+        target="_blank"
+      >
         <img
           class="astro-social-icon"
           src="${base+file}"
@@ -254,7 +310,8 @@ function build() {
             width:18px;
             height:18px;
             border:0;
-          ">
+          "
+        >
       </a>
     </td>
   `).join('');
@@ -262,49 +319,60 @@ function build() {
   return `
   <style>
   @media screen and (max-width:480px) {
+
     .astro-root {
       width:100%!important;
       max-width:340px!important;
     }
+
     .astro-iso-cell {
       display:none!important;
       width:0!important;
       padding:0!important;
     }
+
     .astro-content {
       padding:8px 6px!important;
     }
+
     .astro-name {
       font-size:14px!important;
       line-height:1.2!important;
     }
+
     .astro-role {
       font-size:10px!important;
       padding-bottom:7px!important;
     }
+
     .astro-divider {
       border-top:0!important;
       padding-top:0!important;
     }
+
     .astro-brand {
       display:block!important;
       width:100%!important;
     }
+
     .astro-logo {
       width:125px!important;
       height:auto!important;
     }
+
     .astro-tagline {
       font-size:7px!important;
       letter-spacing:0!important;
       white-space:normal!important;
     }
+
     .astro-social-cell {
       display:block!important;
       width:100%!important;
       padding:7px 0 0!important;
       text-align:left!important;
     }
+
     .astro-social-table {
       float:none!important;
       margin-left:0!important;
@@ -341,7 +409,7 @@ function build() {
         "
       >
         <img
-          src="${base}FIRMA_ISO-ASTRO.svg"
+          src="${base}FIRMA_ISO-ASTRO.png"
           alt="Isotipo Astroterapéutica"
           width="115"
           style="
@@ -362,6 +430,7 @@ function build() {
           vertical-align:middle;
         "
       >
+
         <table
           role="presentation"
           cellpadding="0"
@@ -414,6 +483,7 @@ function build() {
                 padding-top:8px;
               "
             >
+
               <table
                 role="presentation"
                 cellpadding="0"
@@ -433,9 +503,10 @@ function build() {
                     valign="middle"
                     style="vertical-align:middle"
                   >
+
                     <img
                       class="astro-logo"
-                      src="${base}FIRMA_LOGO-ASTRO.svg"
+                      src="${base}FIRMA_LOGO-ASTRO.png"
                       alt="Astroterapéutica"
                       width="125"
                       style="
@@ -460,9 +531,10 @@ function build() {
                     >
                       ESCUELA LÍDER EN ASTROLOGÍA TERAPÉUTICA
                     </div>
+
                   </td>
 
-                  <!-- REDES -->
+                  <!-- REDES SOCIALES -->
                   <td
                     class="astro-social-cell"
                     valign="middle"
@@ -473,6 +545,7 @@ function build() {
                       padding-left:8px;
                     "
                   >
+
                     <table
                       class="astro-social-table"
                       role="presentation"
@@ -483,10 +556,12 @@ function build() {
                     >
                       <tr>${icons}</tr>
                     </table>
+
                   </td>
 
                 </tr>
               </table>
+
             </td>
           </tr>
 
@@ -496,45 +571,57 @@ function build() {
   </table>`;
 }
 
+// ACTUALIZAR FIRMA
 function render() {
   document.getElementById('signature').innerHTML =
     build();
+
+  // Si cambian los datos, la copia anterior
+  // ya no corresponde a la firma actual.
+  copiasRealizadas = 0;
+  document.getElementById('status').textContent = '';
 }
 
+// CAMPOS EDITABLES
 document.getElementById('name')
-  .addEventListener('input',render);
+  .addEventListener('input', render);
 
 document.getElementById('role')
-  .addEventListener('input',render);
+  .addEventListener('input', render);
 
+// VISTA ESCRITORIO
 document.getElementById('desktop').onclick = () => {
   document.getElementById('viewport').className =
     'preview';
 };
 
+// VISTA MÓVIL
 document.getElementById('mobile').onclick = () => {
   document.getElementById('viewport').className =
     'preview phone';
 };
 
+// COPIAR FIRMA PARA GMAIL
 document.getElementById('copy').onclick = async () => {
+
   const status = document.getElementById('status');
 
   try {
+
     if (
       !navigator.clipboard?.write ||
       typeof ClipboardItem === 'undefined'
     ) {
-      throw Error('No clipboard');
+      throw new Error('Portapapeles no disponible');
     }
 
     await navigator.clipboard.write([
       new ClipboardItem({
-        'text/html':new Blob(
+        'text/html': new Blob(
           [build()],
           {type:'text/html'}
         ),
-        'text/plain':new Blob(
+        'text/plain': new Blob(
           [
             document.getElementById('name').value +
             ' - ' +
@@ -545,17 +632,30 @@ document.getElementById('copy').onclick = async () => {
       })
     ]);
 
-    status.textContent =
-      'Firma copiada. Pegala en Gmail.';
+    copiasRealizadas++;
 
-  } catch(e) {
+    if (copiasRealizadas === 1) {
+      status.textContent =
+        '✓ ¡Firma copiada correctamente! Ya podés pegarla en Gmail.';
+    } else {
+      status.textContent =
+        '✓ ¡Firma copiada nuevamente! (' +
+        copiasRealizadas +
+        ' veces en esta edición).';
+    }
+
+  } catch (error) {
+
     status.textContent =
-      'No se pudo copiar automáticamente. ' +
-      'Probá con Chrome desde la página publicada.';
+      'No se pudo copiar la firma. ' +
+      'Probá desde Chrome con la página publicada.';
+
   }
 };
 
+// MOSTRAR FIRMA INICIAL
 render();
+
 </script>
 </body>
 </html>
