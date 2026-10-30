@@ -4,123 +4,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Generador de firmas | Astroterapéutica</title>
+
+<title>Firmas | Astroterapéutica</title>
+
 <style>
-  * { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-  body {
-    margin: 0;
-    background: #f5f2f7;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #54205e;
-  }
+body {
+  margin: 0;
+  background: #f5f2f7;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #54205e;
+}
 
-  header {
-    background: #54205e;
-    color: white;
-    padding: 28px 20px;
-    text-align: center;
-  }
+header {
+  background: #54205e;
+  color: #ffffff;
+  text-align: center;
+  padding: 28px 20px;
+}
 
-  header h1 {
-    margin: 0 0 8px;
-    font-size: 24px;
-  }
+header h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
 
-  header p {
-    margin: 0;
-    font-size: 14px;
-  }
+header p {
+  margin: 0;
+  font-size: 14px;
+}
 
+main {
+  max-width: 1150px;
+  margin: 30px auto;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 22px;
+}
+
+.card {
+  min-width: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(50,20,60,.06);
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  margin: 18px 0 7px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d8cedd;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+button {
+  background: #54205e;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  margin: 5px 5px 5px 0;
+}
+
+button.secondary {
+  background: #eee7f1;
+  color: #54205e;
+}
+
+.preview {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.preview.mobile {
+  width: 375px;
+  max-width: 100%;
+  border: 1px dashed #cabbd0;
+  padding: 10px;
+  overflow: hidden;
+}
+
+#firma {
+  width: 100%;
+}
+
+#estado {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.nota {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #776b7b;
+}
+
+@media (max-width: 750px) {
   main {
-    max-width: 1150px;
-    margin: 30px auto;
-    padding: 0 18px;
-    display: grid;
-    grid-template-columns: 270px minmax(0, 1fr);
-    gap: 22px;
+    display: block;
   }
 
   .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 20px rgba(50,20,60,.06);
-    min-width: 0;
+    margin-bottom: 20px;
   }
-
-  h2 {
-    margin: 0 0 20px;
-    font-size: 18px;
-  }
-
-  label {
-    display: block;
-    margin: 18px 0 7px;
-    font-size: 13px;
-    font-weight: bold;
-  }
-
-  input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d8cedd;
-    border-radius: 6px;
-    font-size: 15px;
-  }
-
-  button {
-    border: none;
-    background: #54205e;
-    color: white;
-    border-radius: 6px;
-    padding: 12px 16px;
-    cursor: pointer;
-    font-size: 13px;
-    margin: 5px 5px 5px 0;
-  }
-
-  button.secondary {
-    background: #eee7f1;
-    color: #54205e;
-  }
-
-  .preview {
-    width: 100%;
-    overflow-x: auto;
-    padding: 20px 0;
-  }
-
-  .preview.mobile {
-    max-width: 375px;
-    border: 1px dashed #cabbd0;
-    padding: 12px;
-  }
-
-  #firma {
-    width: 100%;
-  }
-
-  #estado {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  .nota {
-    color: #776b7b;
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 750px) {
-    main {
-      display: block;
-    }
-
-    .card {
-      margin-bottom: 20px;
-    }
-  }
+}
 </style>
 </head>
 
@@ -134,6 +140,7 @@
 <main>
 
 <section class="card">
+
   <h2>Personalizá tu firma</h2>
 
   <label for="nombre">Nombre y apellido</label>
@@ -151,10 +158,11 @@
   >
 
   <p class="nota">
-    Modificá tus datos. El diseño, el logo y
-    las redes sociales se mantienen iguales
-    para todo el equipo.
+    Modificá tu nombre y cargo.
+    El logo, los colores y las redes sociales
+    se mantienen iguales para todo el equipo.
   </p>
+
 </section>
 
 <section class="card">
@@ -180,21 +188,26 @@
   <p id="estado"></p>
 
   <p class="nota">
-    Después de copiarla, abrí Gmail →
+    Para instalarla: Gmail →
     Configuración → Ver todos los ajustes →
-    Firma y pegala en el editor.
+    Firma → Pegar.
   </p>
 
 </section>
+
 </main>
 
 <script>
-const base =
-  "https://florencia-astro.github.io/firma-astroterapeutica/";
 
+// DIRECCIÓN DE LAS IMÁGENES
+const base =
+"https://florencia-astro.github.io/firma-astroterapeutica/";
+
+// COLORES
 const violeta = "#54205e";
 const dorado = "#D6B56F";
 
+// REDES SOCIALES
 const redes = [
   {
     imagen: "FIRMA_LINKEDIN-ASTRO.svg",
@@ -218,17 +231,20 @@ const redes = [
   }
 ];
 
+// EVITAR CARACTERES PROBLEMÁTICOS
 function escapar(texto) {
-  return texto.replace(/[&<>"']/g, caracter => ({
+  return texto.replace(/[&<>"']/g, c => ({
     "&": "&amp;",
     "<": "&lt;",
     ">": "&gt;",
     '"': "&quot;",
     "'": "&#39;"
-  })[caracter]);
+  })[c]);
 }
 
+// CREAR FIRMA
 function generarFirma() {
+
   const nombre = escapar(
     document.getElementById("nombre").value.trim()
   );
@@ -238,15 +254,26 @@ function generarFirma() {
   );
 
   const iconos = redes.map(red => `
-    <td style="padding-left:8px" valign="middle">
-      <a href="${red.url.replace(/&/g, '&amp;')}"
-         target="_blank">
+    <td
+      valign="middle"
+      style="padding-left:7px"
+    >
+      <a
+        href="${red.url.replace(/&/g,'&amp;')}"
+        target="_blank"
+      >
         <img
           src="${base + red.imagen}"
           alt="${red.nombre}"
-          width="27"
-          height="27"
-          style="display:block;border:0;width:27px;height:27px">
+          width="25"
+          height="25"
+          style="
+            display:block;
+            width:25px;
+            height:25px;
+            border:0;
+          "
+        >
       </a>
     </td>
   `).join("");
@@ -257,9 +284,9 @@ function generarFirma() {
     cellpadding="0"
     cellspacing="0"
     border="0"
+    width="790"
     style="
-      width:100%;
-      max-width:790px;
+      width:790px;
       border-collapse:collapse;
       background:#ffffff;
       font-family:Arial,Helvetica,sans-serif;
@@ -269,10 +296,10 @@ function generarFirma() {
 
       <!-- ISOTIPO IZQUIERDO -->
       <td
-        width="115"
+        width="155"
         valign="middle"
         style="
-          width:115px;
+          width:155px;
           min-width:155px;
           padding:0;
           vertical-align:middle;
@@ -281,10 +308,10 @@ function generarFirma() {
         <img
           src="${base}FIRMA_ISO-ASTRO.svg"
           alt="Astroterapéutica"
-          width="115"
+          width="155"
           style="
             display:block;
-            width:115px;
+            width:155px;
             height:auto;
             border:0;
           "
@@ -305,7 +332,11 @@ function generarFirma() {
           cellpadding="0"
           cellspacing="0"
           border="0"
-          style="width:100%;border-collapse:collapse"
+          width="100%"
+          style="
+            width:100%;
+            border-collapse:collapse;
+          "
         >
 
           <!-- NOMBRE -->
@@ -315,7 +346,7 @@ function generarFirma() {
                 color:${violeta};
                 font-size:27px;
                 line-height:1.15;
-                font-weight:700;
+                font-weight:bold;
                 padding:0 0 4px;
               "
             >
@@ -337,7 +368,7 @@ function generarFirma() {
             </td>
           </tr>
 
-          <!-- LÍNEA DORADA -->
+          <!-- DIVISOR DORADO -->
           <tr>
             <td
               style="
@@ -346,12 +377,13 @@ function generarFirma() {
               "
             >
 
-              <!-- LOGO + REDES -->
+              <!-- LOGO Y REDES -->
               <table
                 role="presentation"
                 cellpadding="0"
                 cellspacing="0"
                 border="0"
+                width="100%"
                 style="
                   width:100%;
                   border-collapse:collapse;
@@ -359,7 +391,7 @@ function generarFirma() {
               >
                 <tr>
 
-                  <!-- LOGO Y BAJADA -->
+                  <!-- LOGO ASTROTERAPÉUTICA -->
                   <td
                     valign="middle"
                     style="
@@ -371,21 +403,22 @@ function generarFirma() {
                     <img
                       src="${base}FIRMA_LOGO-ASTRO.svg"
                       alt="Astroterapéutica"
-                      width="160"
+                      width="220"
                       style="
                         display:block;
-                        width:100%;
-                        max-width:285px;
+                        width:220px;
+                        max-width:220px;
                         height:auto;
                         border:0;
                       "
                     >
 
+                    <!-- BAJADA INSTITUCIONAL -->
                     <div
                       style="
                         color:${dorado};
-                        font-family:Arial,Helvetica,sans-serif;
                         font-size:10px;
+                        font-family:Arial,Helvetica,sans-serif;
                         font-weight:600;
                         line-height:1.4;
                         letter-spacing:.7px;
@@ -409,6 +442,7 @@ function generarFirma() {
                       white-space:nowrap;
                     "
                   >
+
                     <table
                       role="presentation"
                       cellpadding="0"
@@ -420,6 +454,7 @@ function generarFirma() {
                         ${iconos}
                       </tr>
                     </table>
+
                   </td>
 
                 </tr>
@@ -435,26 +470,52 @@ function generarFirma() {
   `;
 }
 
+// ACTUALIZAR VISTA PREVIA
 function actualizar() {
   document.getElementById("firma").innerHTML =
     generarFirma();
 }
 
+// VISTA ESCRITORIO / MÓVIL
 function vista(movil) {
-  document.getElementById("marco")
-    .classList.toggle("mobile", movil);
+
+  const marco = document.getElementById("marco");
+  const firma = document.getElementById("firma");
+
+  marco.classList.toggle("mobile", movil);
+
+  if (movil) {
+
+    firma.style.width = "790px";
+    firma.style.transform = "scale(0.42)";
+    firma.style.transformOrigin = "top left";
+
+    marco.style.height = "145px";
+
+  } else {
+
+    firma.style.width = "790px";
+    firma.style.transform = "none";
+    firma.style.transformOrigin = "";
+
+    marco.style.height = "";
+
+  }
 }
 
+// COPIAR FIRMA PARA GMAIL
 async function copiar() {
+
   const html = generarFirma();
   const estado = document.getElementById("estado");
 
   try {
+
     await navigator.clipboard.write([
       new ClipboardItem({
         "text/html": new Blob(
           [html],
-          { type: "text/html" }
+          {type:"text/html"}
         ),
         "text/plain": new Blob(
           [
@@ -462,7 +523,7 @@ async function copiar() {
             " - " +
             document.getElementById("cargo").value
           ],
-          { type: "text/plain" }
+          {type:"text/plain"}
         )
       })
     ]);
@@ -470,20 +531,25 @@ async function copiar() {
     estado.textContent =
       "¡Firma copiada! Ya podés pegarla en Gmail.";
 
-  } catch (error) {
+  } catch(error) {
+
     estado.textContent =
       "No se pudo copiar automáticamente. " +
       "Probá desde Google Chrome.";
+
   }
 }
 
+// CAMPOS EDITABLES
 document.getElementById("nombre")
   .addEventListener("input", actualizar);
 
 document.getElementById("cargo")
   .addEventListener("input", actualizar);
 
+// MOSTRAR FIRMA INICIAL
 actualizar();
+
 </script>
 
 </body>
